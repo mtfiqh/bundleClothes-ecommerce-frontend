@@ -1,0 +1,2 @@
+export const ADMIN_SIGNIN = "ADMIN_SIGNIN";
+export const ADMIN_SIGNOUT = "ADMIN_SIGNOUT";
