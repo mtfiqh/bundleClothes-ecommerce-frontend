@@ -6,6 +6,7 @@ import Cart from './components/Cart'
 import Footer from './components/Footer';
 import Login from './components/Login';
 import Register from './components/Register';
+import AddressForm from './components/user/AddressForm';
 
 class App extends Component {
   render() {
@@ -19,6 +20,8 @@ class App extends Component {
                       <Route path="/cart" component={Cart}/>
                       <Route path="/Login" component={Login}/>
                       <Route path="/Register" component={Register}/>
+                      <Route path="/AddressForm" component={AddressForm}/>
+                      <Route path="*" component={Home} />
                   </Switch>
                   <Footer/>
              
