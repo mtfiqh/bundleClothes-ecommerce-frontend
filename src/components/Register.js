@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 
+
 export default class Register extends Component {
-  render() {
+    
+    render() {
+ 
     return (
         <div className="container">
         <h3 className="center">Register</h3>
@@ -41,6 +44,7 @@ export default class Register extends Component {
       </form>
     </div>
   </div>
+  
     </div>
     
     );
