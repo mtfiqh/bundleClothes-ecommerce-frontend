@@ -5,6 +5,7 @@ import Home from './components/Home'
 import Cart from './components/Cart'
 import Footer from './components/Footer';
 import Login from './components/Login';
+import Register from './components/Register';
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
                       <Route exact path="/" component={Home}/>
                       <Route path="/cart" component={Cart}/>
                       <Route path="/Login" component={Login}/>
+                      <Route path="/Register" component={Register}/>
                   </Switch>
                   <Footer/>
              
