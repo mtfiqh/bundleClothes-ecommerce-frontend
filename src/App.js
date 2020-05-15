@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Cart from './components/Cart'
 import Footer from './components/Footer';
+import Login from './components/Login';
 
 class App extends Component {
   render() {
@@ -12,11 +13,13 @@ class App extends Component {
             <div className="App">
             
               <Navbar/>
-                <Switch>
-                    <Route exact path="/" component={Home}/>
-                    <Route path="/cart" component={Cart}/>
+                  <Switch>
+                      <Route exact path="/" component={Home}/>
+                      <Route path="/cart" component={Cart}/>
+                      <Route path="/Login" component={Login}/>
                   </Switch>
                   <Footer/>
+             
              </div>
        </BrowserRouter>
       
