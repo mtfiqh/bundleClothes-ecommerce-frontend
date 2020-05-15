@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Product from './components/Product';
-import Jumbotron from './components/Jumbotron';
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Home from './components/Home'
+import Cart from './components/Cart'
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <Header/>
-        <Jumbotron/>
-        <Product/>
-        <Footer/>
-      </div>
+       <BrowserRouter>
+            <div className="App">
+            
+              <Navbar/>
+                <Switch>
+                    <Route exact path="/" component={Home}/>
+                    <Route path="/cart" component={Cart}/>
+                  </Switch>
+             </div>
+       </BrowserRouter>
+      
     );
   }
 }

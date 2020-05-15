@@ -1,17 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-// import App from './App';
-import AppRouter from './appRouter'
+import App from './App';
+import './index.css'
+import cartReducer from './components/reducers/cartReducer';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 
+const store = createStore(cartReducer);
 
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/js/bootstrap.js';
-import * as serviceWorker from './serviceWorker';
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 
-ReactDOM.render(<AppRouter />, document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
