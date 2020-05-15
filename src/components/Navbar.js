@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import Modal from './Modal';
  const Navbar = ()=>{
     return(
             <nav className="nav-wrapper">
@@ -10,13 +9,12 @@ import Modal from './Modal';
                     <ul className="right">
                         <li><Link to="/">Shop</Link></li>
                         <li><Link to="/cart"><i className="material-icons left">shopping_cart</i>My cart</Link></li>
-                        <li><a className="waves-effect waves-light btn" >Sign Up</a></li>
-                        <li><a className="waves-effect waves-light btn">Login</a></li>
-                   </ul>
-                  
-
+                        <li><a class="waves-effect waves-light btn">Sign Up</a></li>
+                        <li><a class="waves-effect waves-light btn">Login</a></li>
+                    </ul>
                 </div>
             </nav>
+   
         
     )
 }
