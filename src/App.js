@@ -7,6 +7,9 @@ import Footer from './components/Footer';
 import Login from './components/Login';
 import Register from './components/Register';
 import AddressForm from './components/user/AddressForm';
+import Procesed from './components/user/Procesed';
+import Complete from './components/user/Completed';
+import Review from './components/user/Review'
 
 class App extends Component {
   render() {
@@ -21,6 +24,9 @@ class App extends Component {
                       <Route path="/Login" component={Login}/>
                       <Route path="/Register" component={Register}/>
                       <Route path="/AddressForm" component={AddressForm}/>
+                      <Route path="/Procesed" component={Procesed}/>
+                      <Route path="/Complete" component={Complete}/>
+                      <Route path="/Review" component={Review}/>
                       <Route path="*" component={Home} />
                   </Switch>
                   <Footer/>
