@@ -43,10 +43,13 @@ export default class Account extends Component {
                       </tr>
                       <tr>
                         <td>
-                          <i className="material-icons left">cloud_upload</i>
-                          Browse
-                          <input type="file" />
-                        </td>
+                        <div class="file-field input-field"><i className="material-icons">cloud_upload</i>  
+                            <input type="file" />                   
+                             <div class="file-path-wrapper">
+                            <input class="file-path validate" placeholder="Upload Image" type="text"/>
+                           </div>
+                          </div>
+                       </td>
                       </tr>
                       <tr>
                         <td>
