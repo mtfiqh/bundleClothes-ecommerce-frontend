@@ -3,6 +3,9 @@ import item1 from "../../images/item1.jpg";
 import { Link } from "react-router-dom";
 
 export default class Account extends Component {
+  componentDidMount(){
+    document.title = "Setting | Account"
+  }
   render() {
     return (
       <div className="container">

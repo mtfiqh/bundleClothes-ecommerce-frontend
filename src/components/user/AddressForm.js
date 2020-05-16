@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 export default class AddressForm extends Component {
+  componentDidMount(){
+    document.title = "Setting | Delivery Address"
+  }
   render() {
     return (
       <div className="container">

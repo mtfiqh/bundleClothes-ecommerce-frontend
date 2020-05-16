@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 
 
 export default class Register extends Component {
-    
+  componentDidMount(){
+    document.title = "Register"
+  }
     render() {
  
     return (

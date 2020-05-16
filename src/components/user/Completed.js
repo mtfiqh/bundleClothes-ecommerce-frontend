@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 export default class Complete extends Component {
+  componentDidMount(){
+    document.title = "Order Status | Complete"
+  }
   render() {
     return (
       <div className="container">

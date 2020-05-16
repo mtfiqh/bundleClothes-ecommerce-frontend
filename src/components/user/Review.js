@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 export default class Review extends Component {
+  componentDidMount(){
+    document.title = "Order Status | Review"
+  }
   render() {
     return (
       <div className="container">

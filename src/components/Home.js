@@ -14,7 +14,9 @@ class Home extends Component {
   handleClick = (id) => {
     this.props.addToCart(id);
   };
-
+  componentDidMount(){
+    document.title = "Bundle Clothes | Home"
+  }
   render() {
     let itemList = this.props.items.map((item) => {
       return (

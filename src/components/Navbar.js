@@ -22,7 +22,7 @@ import { Link } from 'react-router-dom'
                             </div>
                           </div>
                           </li> 
-                        <li><Link to="/Register" className="waves-effect waves-light btn">Sign Up</Link></li>
+                        <li><Link to="/Register" className="waves-effect waves-light btn">Register</Link></li>
                         <li><Link to="/Login" className="waves-effect waves-light btn">Login</Link></li>
                        
                     </ul>

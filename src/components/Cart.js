@@ -19,10 +19,14 @@ class Cart extends Component {
   handleSubtractQuantity = (id) => {
     this.props.subtractQuantity(id);
   };
+  componentDidMount(){
+    document.title = "Cart"
+  }
   render() {
     let addedItems = this.props.items.length ? (
       this.props.items.map((item) => {
         return (
+          
           <li className="collection-item avatar" key={item.id}>
             <label className="centered">
               <input type="checkbox" />
