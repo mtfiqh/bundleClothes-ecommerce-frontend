@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { signIn } from "../../../actions/admin/adminAuthAction";
+import { login } from "../../../actions/admin/adminAuthAction";
 
-const FormSignIn = ({ signIn }) => {
-  const [username, setUsername] = useState("admin");
-  const [password, setPassword] = useState("admin");
+const FormLogin = ({ loading, login }) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        signIn(username, password);
+        login(username, password);
       }}
     >
       <div className="form-group">
@@ -37,16 +37,21 @@ const FormSignIn = ({ signIn }) => {
         />
       </div>
       <div className="text-right">
-        <button type="submit" className="btn btn-primary">
-          Sign In
+        <button type="submit" className="btn btn-primary" disabled={loading}>
+          Login
         </button>
       </div>
     </form>
   );
 };
 
-FormSignIn.propTypes = {
-  signIn: PropTypes.func.isRequired,
+FormLogin.propTypes = {
+  loading: PropTypes.bool.isRequired,
+  login: PropTypes.func.isRequired,
 };
 
-export default connect(null, { signIn })(FormSignIn);
+const mapStateToProps = (state) => ({
+  loading: state.adminAuth.loading,
+});
+
+export default connect(mapStateToProps, { login })(FormLogin);

@@ -5,6 +5,8 @@ import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import Dashboard from "./Dashboard";
 import Products from "./Products";
+import ProductAdd from "./ProductAdd";
+import ProductEdit from "./ProductEdit";
 
 const Admin = () => {
   return (
@@ -14,7 +16,7 @@ const Admin = () => {
         <div className="card shadow">
           <div className="card-body">
             <div className="row">
-              <div className="col-md-2 col-lg-2">
+              <div className="col-md-2 col-lg-2 my-3">
                 <div
                   className="nav flex-column nav-pills text-center"
                   id="v-pills-tab"
@@ -24,11 +26,13 @@ const Admin = () => {
                   <Sidebar />
                 </div>
               </div>
-              <div className="col-md-9">
+              <div className="col-md-9 my-3">
                 <div className="tab-content" id="v-pills-tabContent">
                   <Switch>
                     <Route exact path="/admin" component={Dashboard} />
                     <Route exact path="/admin/products" component={Products} />
+                    <Route exact path="/admin/product/add" component={ProductAdd} />
+                    <Route exact path="/admin/product/edit/:productId" component={ProductEdit} />
                   </Switch>
                 </div>
               </div>

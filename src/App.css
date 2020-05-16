@@ -1,3 +1,12 @@
 #root > main {
   padding-top: 60px;
 }
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
