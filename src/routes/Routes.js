@@ -11,11 +11,13 @@ import AdminProductDelete from "../components/admin/ProductDelete";
 import Login from "../components/Login";
 import Logout from "../components/Logout";
 import Register from "../components/Register";
+import Landing from "../components/Landing";
 
 const Routes = () => {
   return (
     <Switch>
       <Route exact path="/login" component={Login} />
+      <Route exact path="/cart" component={Landing} />
       <PrivateRoute exact path="/logout" component={Logout} />
       <Route exact path="/register" component={Register} />
       <Route exact path="/admin/login" component={AdminLogin} />
