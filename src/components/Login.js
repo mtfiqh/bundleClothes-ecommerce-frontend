@@ -2,22 +2,22 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
-import FormRegister from "./FormRegister";
+import FormLogin from "./FormLogin";
 
-const Register = ({ loading, isSuccess, isAuthenticated }) => {
+const Login = ({ loading, isSuccess, isAuthenticated }) => {
   return isAuthenticated ? (
     <Redirect to="/" />
   ) : isSuccess ? (
-    <Redirect to="/login" />
+    <Redirect to="/" />
   ) : (
     <div>
-      <h1>Register</h1>
-      <FormRegister />
+      <h1>Login</h1>
+      <FormLogin />
     </div>
   );
 };
 
-Register.propTypes = {
+Login.propTypes = {
   loading: PropTypes.bool.isRequired,
   isSuccess: PropTypes.bool.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
@@ -29,4 +29,4 @@ const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
 });
 
-export default connect(mapStateToProps)(Register);
+export default connect(mapStateToProps)(Login);

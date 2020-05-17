@@ -1,5 +1,20 @@
 import Cookie from "js-cookie";
-import { ADMIN_AUTHENTICATION_TOKEN } from "../constants/GeneralConst";
+import {
+  AUTHENTICATION_TOKEN,
+  ADMIN_AUTHENTICATION_TOKEN,
+} from "../constants/GeneralConst";
+
+const setAuthenticationToken = (token) => {
+  if (token) {
+    Cookie.set(AUTHENTICATION_TOKEN, token, { expires: 3 });
+  } else {
+    Cookie.remove(AUTHENTICATION_TOKEN);
+  }
+};
+
+const getAuthenticationToken = () => {
+  return Cookie.get(AUTHENTICATION_TOKEN);
+};
 
 const setAdminAuthenticationToken = (token) => {
   if (token) {
@@ -15,4 +30,9 @@ const getAdminAuthenticationToken = () => {
   return Cookie.get(ADMIN_AUTHENTICATION_TOKEN);
 };
 
-export { setAdminAuthenticationToken, getAdminAuthenticationToken };
+export {
+  setAuthenticationToken,
+  getAuthenticationToken,
+  setAdminAuthenticationToken,
+  getAdminAuthenticationToken,
+};

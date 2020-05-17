@@ -15,9 +15,7 @@ import {
 } from "../../constants/ActionTypes";
 import { BASE_URL } from "../../constants/ApiServices";
 
-const register = (name, username, password) => async (dispatch) => {
-  
-};
+const register = (name, username, password) => async (dispatch) => {};
 
 const login = (username, password) => async (dispatch) => {
   const config = {
