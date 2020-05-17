@@ -1,16 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { register } from "../actions/authAction";
+import { udpateUser } from "../actions/authAction";
 
-const FormRegister = ({ loading, register }) => {
+const FormChangePassword = ({ currentUser, loading, udpateUser }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+
+  useEffect(() => {
+    if (currentUser) {
+      setName(currentUser.name);
+      setEmail(currentUser.email);
+    }
+  }, [currentUser]);
 
   const onSubmit = (e) => {
     e.preventDefault();
-    register(name, email, password);
+    udpateUser(name, email, password, newPassword);
   };
 
   return (
@@ -23,6 +31,7 @@ const FormRegister = ({ loading, register }) => {
           className="form-control"
           placeholder="Full Name"
           onChange={(e) => setName(e.target.value)}
+          value={name}
         />
       </div>
       <div className="form-group">
@@ -33,6 +42,7 @@ const FormRegister = ({ loading, register }) => {
           className="form-control"
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
+          value={email}
         />
       </div>
       <div className="form-group">
@@ -43,6 +53,18 @@ const FormRegister = ({ loading, register }) => {
           className="form-control"
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
+          value={password}
+        />
+      </div>
+      <div className="form-group">
+        <input
+          type="password"
+          id="newPassword"
+          name="newPassword"
+          className="form-control"
+          placeholder="New Password"
+          onChange={(e) => setNewPassword(e.target.value)}
+          value={newPassword}
         />
       </div>
       <div className="text-right">
@@ -54,13 +76,15 @@ const FormRegister = ({ loading, register }) => {
   );
 };
 
-FormRegister.propTypes = {
+FormChangePassword.propTypes = {
   loading: PropTypes.bool.isRequired,
-  register: PropTypes.func.isRequired,
+  currentUser: PropTypes.object,
+  udpateUser: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   loading: state.auth.loading,
+  currentUser: state.auth.currentUser,
 });
 
-export default connect(mapStateToProps, { register })(FormRegister);
+export default connect(mapStateToProps, { udpateUser })(FormChangePassword);

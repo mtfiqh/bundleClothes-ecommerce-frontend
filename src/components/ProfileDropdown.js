@@ -38,7 +38,7 @@ const ProfileDropdown = ({
         className="dropdown-menu dropdown-menu-right"
         aria-labelledby="navbarDropdown"
       >
-        <Link className="dropdown-item" to="">
+        <Link className="dropdown-item" to="/changepassword">
           Change Password
         </Link>
         <div className="dropdown-divider"></div>

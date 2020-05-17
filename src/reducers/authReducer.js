@@ -11,6 +11,10 @@ import {
   GET_CURRENT_USER,
   GET_CURRENT_USER_SUCCESS,
   GET_CURRENT_USER_FAILED,
+  UPDATE_USER,
+  UPDATE_PRODUCT_SUCCESS,
+  UPDATE_USER_SUCCESS,
+  UPDATE_USER_FAILED,
 } from "../constants/ActionTypes";
 import { getAuthenticationToken } from "../utils/authentication";
 
@@ -113,6 +117,24 @@ const authReducer = (state = initialState, action) => {
         loading: false,
         isSuccess: false,
         currentUser: null,
+      };
+    case UPDATE_USER:
+      return {
+        ...state,
+        loading: true,
+        isSuccess: false,
+      };
+    case UPDATE_USER_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        isSuccess: true,
+      };
+    case UPDATE_USER_FAILED:
+      return {
+        ...state,
+        loading: false,
+        isSuccess: false,
       };
     default:
       return state;

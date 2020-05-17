@@ -15,6 +15,7 @@ const Routes = () => {
   return (
     <Switch>
       <Route exact path="/login" component={Landing} />
+      <PrivateRoute exact path="/changepassword" component={Landing} />
       <PrivateRoute exact path="/cart" component={Landing} />
       <PrivateRoute exact path="/logout" component={Logout} />
       <Route exact path="/register" component={Landing} />

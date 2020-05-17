@@ -13,6 +13,9 @@ import {
   GET_CURRENT_USER,
   GET_CURRENT_USER_SUCCESS,
   GET_CURRENT_USER_FAILED,
+  UPDATE_USER,
+  UPDATE_USER_SUCCESS,
+  UPDATE_USER_FAILED,
 } from "../constants/ActionTypes";
 
 const register = (name, email, password) => async (dispatch) => {
@@ -121,4 +124,39 @@ const getCurrentUser = () => async (dispatch, getState) => {
   }
 };
 
-export { register, login, logout, getCurrentUser };
+const udpateUser = (name, email, password, newPassword) => async (
+  dispatch,
+  getState
+) => {
+  const {
+    auth: { token },
+  } = getState();
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      token: token,
+    },
+  };
+
+  const body = JSON.stringify({
+    current_password: password,
+    name: name,
+    email: email,
+    new_password: newPassword,
+    sex: "UNKNOWN",
+  });
+
+  dispatch({ type: UPDATE_USER });
+
+  try {
+    await axios.put(BASE_URL + "user/self", body, config);
+
+    dispatch({ type: UPDATE_USER_SUCCESS });
+    dispatch(getCurrentUser());
+  } catch (e) {
+    console.error(e);
+    dispatch({ type: UPDATE_USER_FAILED });
+  }
+};
+
+export { register, login, logout, getCurrentUser, udpateUser };
