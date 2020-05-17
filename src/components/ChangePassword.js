@@ -15,7 +15,7 @@ const ChangePassword = ({ loading, isSuccess }) => {
             <div className="card shadow">
               <div className="card-body">
                 <h5 className="card-title text-center mb-3">
-                  Register{" "}
+                  Change Password{" "}
                   {loading ? (
                     <CircularProgressIndicator />
                   ) : isSuccess ? (
