@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import FormLogin from "./FormLogin";
+import CircularProgressIndicator from "./CircularProgressIndicator";
+import SuccessIcon from "./SuccessIcon";
+import FailedIcon from "./FailedIcon";
 
 const Login = ({ loading, isSuccess, isAuthenticated }) => {
   return isAuthenticated ? (
@@ -10,10 +13,29 @@ const Login = ({ loading, isSuccess, isAuthenticated }) => {
   ) : isSuccess ? (
     <Redirect to="/" />
   ) : (
-    <div>
-      <h1>Login</h1>
-      <FormLogin />
-    </div>
+    <main role="main" className="flex-shrink-0">
+      <div className="container">
+        <div className="row align-items-center m-3">
+          <div className="col-md-6 col-lg-4 mx-auto">
+            <div className="card shadow">
+              <div className="card-body">
+                <h5 className="card-title text-center mb-3">
+                  Login{" "}
+                  {loading ? (
+                    <CircularProgressIndicator />
+                  ) : isSuccess ? (
+                    <SuccessIcon />
+                  ) : (
+                    <FailedIcon />
+                  )}
+                </h5>
+                <FormLogin />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   );
 };
 

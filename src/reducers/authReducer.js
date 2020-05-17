@@ -89,6 +89,9 @@ const authReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         isSuccess: false,
+        isAuthenticated: false,
+        token: "",
+        currentUser: null,
       };
     case GET_CURRENT_USER:
       return {

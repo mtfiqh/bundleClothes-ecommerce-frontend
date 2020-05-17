@@ -1,58 +1,61 @@
-import React, { Fragment } from "react";
+import React, { useEffect, Fragment } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { getProductCart } from "../actions/productAction";
+import { APP_NAME } from "../constants/GeneralConst";
+import ProfileDropdown from "./ProfileDropdown";
 
-const Navbar = ({ isAuthenticated }) => {
+const Navbar = ({ isAuthenticated, cart, getProductCart }) => {
+  useEffect(() => {
+    getProductCart();
+  }, [getProductCart]);
+
   return (
-    <nav className="nav-wrapper">
+    <nav className="navbar navbar-expand-md navbar-dark bg-dark fixed-top shadow">
       <div className="container">
-        <Link to="/" className="brand-logo">
-          Bundle Cloth
+        <Link className="navbar-brand" to="/">
+          {APP_NAME}
         </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-        <ul className="right right hide-on-med-and-down">
-          <li>
-            <Link to="/">Shop</Link>
-          </li>
-          <li>
-            <Link to="/cart">
-              <i className="material-icons left prefix">shopping_cart</i>My cart
-            </Link>
-          </li>
-          <li>
-            <div className="center row">
-              <div className="col s12 ">
-                <div className="row" id="topbarsearch">
-                  <div className="input-field col s6 s12 ">
-                    <i className="material-icons prefix">search</i>
-                    <input type="text" placeholder="Search Product.." />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          {isAuthenticated ? (
-            <li>
-              <Link to="/logout" className="waves-effect waves-light btn">
-                Logout
-              </Link>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <NavLink exact to="/" className="nav-link">
+                Home
+              </NavLink>
             </li>
-          ) : (
-            <Fragment>
-              <li>
-                <Link to="/register" className="waves-effect waves-light btn">
-                  Register
-                </Link>
-              </li>
-              <li>
-                <Link to="/login" className="waves-effect waves-light btn">
+
+            {isAuthenticated ? (
+              <Fragment>
+                <li className="nav-item">
+                  <NavLink exact to="/cart" className="nav-link">
+                    {cart.length}
+                    <i className="fas fa-shopping-cart"></i>
+                  </NavLink>
+                </li>
+                <ProfileDropdown />
+              </Fragment>
+            ) : (
+              <li className="nav-item">
+                <NavLink exact to="/login" className="nav-link">
                   Login
-                </Link>
-              </li>{" "}
-            </Fragment>
-          )}
-        </ul>
+                </NavLink>
+              </li>
+            )}
+          </ul>
+        </div>
       </div>
     </nav>
   );
@@ -60,10 +63,13 @@ const Navbar = ({ isAuthenticated }) => {
 
 Navbar.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
+  cart: PropTypes.array.isRequired,
+  getProductCart: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
+  cart: state.product.cart,
 });
 
-export default connect(mapStateToProps)(Navbar);
+export default connect(mapStateToProps, { getProductCart })(Navbar);

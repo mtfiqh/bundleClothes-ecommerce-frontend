@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getProductCart } from "../actions/productAction";
 import CartItem from "./CartItem";
+import Carts from "./Carts";
 
 const Cart = ({ cart, getProductCart }) => {
   useEffect(() => {
@@ -10,16 +11,11 @@ const Cart = ({ cart, getProductCart }) => {
   }, [getProductCart]);
 
   return (
-    <div className="container">
-      <div className="cart">
-        <h5>You have ordered: {cart.length}</h5>
-        <ul className="collection">
-          {cart.map((item, index) => (
-            <CartItem key={index} item={item} />
-          ))}
-        </ul>
+    <main role="main" className="flex-shrink-0">
+      <div className="container">
+        <Carts />
       </div>
-    </div>
+    </main>
   );
 };
 

@@ -3,34 +3,31 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="page-footer">
+    <footer className="footer mt-auto bg-dark py-3 text-white">
       <div className="container">
         <div className="row">
-          <div className="col l6 s12">
-            <h5 className="white-text">Bundle Clothes</h5>
-            <p className="grey-text text-lighten-4">
+          <div className="col-8">
+            <h5>Bundle Clothes</h5>
+            <p>
               Bundle Clothes is an online store that sells clothes in a bundle.
             </p>
           </div>
-          <div className="col l4 offset-l2 s12">
-            <h5 className="white-text">Knowledge</h5>
-            <ul>
-              <li>
-                <Link to="/Account" className="grey-text text-lighten-3">
-                  Account
-                </Link>
-              </li>
-              <li>
-                <Link to="/Procesed" className="grey-text text-lighten-3">
+          <div className="col-4">
+            <h5>Knowledge</h5>
+            <div className="row">
+              <div className="col-12">
+                <Link to="/orders" className="text-white">
                   My Order
                 </Link>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="footer-copyright">
-        <div className="container">© 2020 Bundle Clothes</div>
+        <div className="row">
+          <div className="col-12">
+            <p>&copy; 2020, Bundle Clothes.</p>
+          </div>
+        </div>
       </div>
     </footer>
   );
