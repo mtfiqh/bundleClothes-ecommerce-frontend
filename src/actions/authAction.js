@@ -30,6 +30,7 @@ const register = (name, email, password) => async (dispatch) => {
     await axios.post(BASE_URL + "user", body, config);
 
     dispatch({ type: USER_REGISTER_SUCCESS });
+    dispatch(login(email, password));
   } catch (e) {
     console.error(e);
     dispatch({ type: USER_REGISTER_FAILED });

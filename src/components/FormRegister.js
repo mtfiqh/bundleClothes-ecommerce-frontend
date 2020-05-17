@@ -14,58 +14,41 @@ const FormRegister = ({ loading, register }) => {
   };
 
   return (
-    <form className="login-form" onSubmit={onSubmit}>
-      <div className="row">
-        <div className="input-field col s12">
-          <i className="material-icons prefix">perm_identity</i>
-          <input
-            className="validate"
-            id="name"
-            type="text"
-            onChange={(e) => setName(e.target.value)}
-          />
-          <label for="name" data-error="wrong" data-success="right">
-            Nama
-          </label>
-        </div>
+    <form onSubmit={onSubmit} className="login-form">
+      <div className="form-group">
+        <input
+          type="text"
+          id="name"
+          name="name"
+          className="form-control"
+          placeholder="Full Name"
+          onChange={(e) => setName(e.target.value)}
+        />
       </div>
-
-      <div className="row">
-        <div className="input-field col s12">
-          <i className="material-icons prefix">mail_outline</i>
-          <input
-            className="validate"
-            id="email"
-            type="email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <label for="email" data-error="wrong" data-success="right">
-            Email
-          </label>
-        </div>
+      <div className="form-group">
+        <input
+          type="email"
+          id="email"
+          name="email"
+          className="form-control"
+          placeholder="Email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
       </div>
-      <div className="row">
-        <div className="input-field col s12">
-          <i className="material-icons prefix">lock_outline</i>
-          <input
-            id="password"
-            type="password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <label for="password">Password</label>
-        </div>
+      <div className="form-group">
+        <input
+          type="password"
+          id="password"
+          name="password"
+          className="form-control"
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
       </div>
-
-      <div className="row">
-        <div className="input-field col s12">
-          <button
-            type="submit"
-            className="btn waves-effect waves-light col s12"
-            disabled={loading}
-          >
-            Register
-          </button>
-        </div>
+      <div className="text-right">
+        <button type="submit" className="btn btn-primary" disabled={loading}>
+          Register
+        </button>
       </div>
     </form>
   );

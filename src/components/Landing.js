@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import Home from "./Home";
 import Cart from "./Cart";
 import Login from "./Login";
+import Register from "./Register";
 
 const Landing = () => {
   return (
@@ -13,6 +14,7 @@ const Landing = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
         <Route exact path="/cart" component={Cart} />
       </Switch>
       <Footer />

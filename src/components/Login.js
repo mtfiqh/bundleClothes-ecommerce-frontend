@@ -1,18 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import FormLogin from "./FormLogin";
 import CircularProgressIndicator from "./CircularProgressIndicator";
 import SuccessIcon from "./SuccessIcon";
 import FailedIcon from "./FailedIcon";
 
 const Login = ({ loading, isSuccess, isAuthenticated }) => {
-  return isAuthenticated ? (
-    <Redirect to="/" />
-  ) : isSuccess ? (
-    <Redirect to="/" />
-  ) : (
+  if (isAuthenticated) {
+    return <Redirect to="/" />;
+  }
+  return (
     <main role="main" className="flex-shrink-0">
       <div className="container">
         <div className="row align-items-center m-3">
@@ -30,6 +29,10 @@ const Login = ({ loading, isSuccess, isAuthenticated }) => {
                   )}
                 </h5>
                 <FormLogin />
+                <div className="mt-5">
+                  Doesn't have account yet?{" "}
+                  <Link to="/register">Register here</Link>
+                </div>
               </div>
             </div>
           </div>
