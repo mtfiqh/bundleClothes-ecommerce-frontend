@@ -103,8 +103,6 @@ const removeProductFromCart = (productId) => async (dispatch, getState) => {
     },
   };
 
-  const body = JSON.stringify({ product_id: productId });
-
   dispatch({ type: REMOVE_PRODUCT_FROM_CART });
 
   try {
