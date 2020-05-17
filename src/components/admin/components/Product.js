@@ -2,8 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Rating from "../../Rating";
+import { deleteProduct } from "../../../actions/admin/adminProductAction";
+import { connect } from "react-redux";
 
-const Products = ({ index, product }) => {
+const Products = ({ index, product, deleteProduct }) => {
   const { _id, title, images, sold, rating } = product;
   return (
     <tr>
@@ -38,12 +40,12 @@ const Products = ({ index, product }) => {
           >
             <i className="far fa-edit"></i>
           </Link>
-          <Link
-            to={`/admin/product/delete/${_id}`}
+          <button
             className="btn btn-outline-danger btn-sm mx-1"
+            onClick={() => deleteProduct(_id)}
           >
             <i className="far fa-trash-alt"></i>
-          </Link>
+          </button>
         </div>
       </td>
     </tr>
@@ -53,6 +55,7 @@ const Products = ({ index, product }) => {
 Products.propTypes = {
   index: PropTypes.number.isRequired,
   product: PropTypes.object.isRequired,
+  deleteProduct: PropTypes.func.isRequired,
 };
 
-export default Products;
+export default connect(null, { deleteProduct })(Products);

@@ -1,43 +1,68 @@
-# TUGAS BESAR PEMROGRAMAN WEB LANJUT
-## BACKEND WITH NODEJS + EXPRESSJS + MONGODB
-### BUNDLE CLOTHES E-COMMERCE
-| Nama | NIM |
-|--|--|
-| Muhammad Taufiq Hidayat | 14116162  |
-| Isnedi Candra Kusuma | 14116136 |
-| Aditya Ricky Pratama | 14116142 |
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
----
-Untuk dokumentasi API lengkap dapat dilihat pada link [Postman disini](https://documenter.getpostman.com/view/8530975/Szmh4Hb6?version=latest#62ea36a3-2afa-44f8-9913-592348f9c07a)
-untuk frontend dapat dilihat [pada repository ini](https://github.com/mtfiqh/bundleClothes-ecommerce-frontend)
-untuk backend dapat dilihat [pada repository ini] https://github.com/mtfiqh/bundleClothes-ecommerce-backend
+## Available Scripts
 
----
-### Penjelasan API
-- Total API : 39 API
-- functional API : 37 API
-- git pull API : 1 API
-- test API : 1 API
---
-struktur Folder dokumentasi
-![enter image description here](https://raw.githubusercontent.com/mtfiqh/bundleClothes-ecommerce-backend/master/github/Struktur%20API.png)
-Setiap API yang di dalam folder: 
-- User membutuhkan auth user
-- Admin membutuhkan auth admin
+In the project directory, you can run:
 
-**Auth menggunakan token yang dikirim bersamaan menggunakan *headers***
-token didapatkan bersamaan dengan response ketika melakukan login
----
-# Dependencies yang digunakan
-|Name| Version |Link  | Description |
-|--|--|--|--|
-| bcrypt | 4.0.1 |[https://www.npmjs.com/package/bcrypt](https://www.npmjs.com/package/bcrypt) | Untuk melakukan enkripsi pada password (hashing) |
-| cors | 2.8.5 | [https://www.npmjs.com/package/cors](https://www.npmjs.com/package/cors) | Untuk mengaktifkan middleware cors, dan mengatasi permasalahan limited cors connection antara front end ke backend |
-| dotenv | 8.2.0 | [https://www.npmjs.com/package/dotenv](https://www.npmjs.com/package/dotenv) | Menggunakan .env agar memudahkan penggunaan variable yang dibedakan pada tahap development dan produksi |
-| express | 4.17.1 | [https://www.npmjs.com/package/express](https://www.npmjs.com/package/express) | Web application framework untuk NodeJS |
-| fs | 0.0.1-security | [https://www.npmjs.com/package/fs](https://www.npmjs.com/package/fs) | digunakan untuk melakukan pengoperasian pada file (save dan hapus file) |
-| mongoose | 5.9.13 | [https://mongoosejs.com/](https://mongoosejs.com/) | Digunakan untuk konektifitas antara mongodb dan nodejs |
-| multer | 1.4.2 | [https://www.npmjs.com/package/multer](https://www.npmjs.com/package/multer) | digunakan untuk menerima request multipart/form-data (upload image / file) |
-| simple-git | 2.4.0 | [https://www.npmjs.com/package/simple-git](https://www.npmjs.com/package/simple-git) | digunakan untuk melakukan pull pada github secara programmatically |
-| uuid | 8.0.0 | [https://www.npmjs.com/package/uuid](https://www.npmjs.com/package/uuid) | melakukan generate uuid yang digunakan sebagai token |
-|nodemon | 2.0.3 | [https://www.npmjs.com/package/nodemon](https://www.npmjs.com/package/nodemon) | digunakan untuk menjalankan server, akan melakukan auto restart ketika melakukan perubahan 
+### `npm start`
+
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
