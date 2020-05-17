@@ -31,6 +31,18 @@ token didapatkan bersamaan dengan response ketika melakukan login
 # Dependencies yang digunakan
 |Name| Version |Link  | Description |
 |--|--|--|--|
+
+| Material Icon | 3.0.1 | https://fonts.googleapis.com/icon?family=Material+Icons | Digunakan untuk icon yang digunakan pada layout |
+| Materialize | 1.0.0 | https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css | Sebagai framework css untuk layout pada landing-page dan user |
+| Materialize js | 1.0.0 | https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js | Sebagai js pendukung untuk framework css |
+| materialize-stepper | 3.1.0 | https://www.npmjs.com/package/materialize-stepper | Untuk membuat stepper tab dengan menggunakan framework css materialize |
+| Materialize-stepper js | 3.1.0 | https://unpkg.com/materialize-stepper@3.1.0/dist/js/mstepper.min.js | Sebagai js pendukung untuk materialize-stepper |
+| axios | 0.19.2 | https://www.npmjs.com/package/axios | Digunakan untuk mengakses REST API |
+| react-router-dom | 5.2.0 | https://www.npmjs.com/package/react-router-dom | untuk react router |
+| js-cookie | 2.2.1 | https://www.npmjs.com/package/js-cookie | sebagai handler cookies |
+| redux | 4.0.5 | https://www.npmjs.com/package/redux | untuk manajemen state |
+| redux-devtools-extension | 2.13.8 | https://www.npmjs.com/package/redux-devtools-extension | sebagai extension tambahan untuk redux |
+| react-redux | 7.2.0 | https://www.npmjs.com/package/react-redux?activeTab=versions | untuk manajemen state |
 | bcrypt | 4.0.1 |[https://www.npmjs.com/package/bcrypt](https://www.npmjs.com/package/bcrypt) | Untuk melakukan enkripsi pada password (hashing) |
 | cors | 2.8.5 | [https://www.npmjs.com/package/cors](https://www.npmjs.com/package/cors) | Untuk mengaktifkan middleware cors, dan mengatasi permasalahan limited cors connection antara front end ke backend |
 | dotenv | 8.2.0 | [https://www.npmjs.com/package/dotenv](https://www.npmjs.com/package/dotenv) | Menggunakan .env agar memudahkan penggunaan variable yang dibedakan pada tahap development dan produksi |
